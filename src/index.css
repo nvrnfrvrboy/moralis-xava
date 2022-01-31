@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+@font-face {
+  font-family: 'IntegralCF-ExtraBold';
+  src: url('/src/fonts/IntegralCF-ExtraBold.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +23,36 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* width */
+#community-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+#community-scrollbar::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 10px white;
+  border-radius: 3px;
+}
+
+/* Handle */
+#community-scrollbar::-webkit-scrollbar-thumb {
+  background: linear-gradient(253.34deg, #ff6746 11.3%, #ff0546 106.44%);
+  border-radius: 10px;
+}
+
+.notes > * {
+  margin: 10px 0;
+  text-align: justify;
+}
+
+.explainer > p {
+  margin: 9px 0;
+  text-align: justify;
+}
+
+.explainer > ol {
+  margin: 11px 0;
+  text-align: justify;
 }
