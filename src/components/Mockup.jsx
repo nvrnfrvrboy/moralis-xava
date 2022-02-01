@@ -42,7 +42,7 @@ const Mockup = props => {
         'Complete our quiz, 30 community members will be given special 200% boosting NFTs for the vesting pools.',
       link: 'https://www.twitter.com',
       tip:
-        'These cards represent various are initiatives in the post-sale community reward feed.'
+        'These cards represent various initiatives in the post-sale community reward feed.'
     },
     {
       id: '2',
@@ -52,7 +52,7 @@ const Mockup = props => {
       desc: 'Enter our fan art competition for a chance at 5 lots of 300 HeC.',
       link: 'https://www.twitter.com',
       tip:
-        'These cards represent various are initiatives in the post-sale community reward feed.'
+        'These cards represent various initiatives in the post-sale community reward feed.'
     }
   ]
 
@@ -66,7 +66,7 @@ const Mockup = props => {
   }
 
   return (
-    <div className='w-full flex mt-10 mb-96'>
+    <div className='w-full flex mt-10'>
       {showPool && (
         <Pool
           cancelModal={cancelModal}

@@ -28,14 +28,15 @@ const Preamble = props => {
                   <li>
                     This site is not designed for mobile responsiveness, its
                     widest components have a fixed width of approximately
-                    1200px. Please view on a desktop or laptop.
+                    1200px. Please view on a desktop or laptop. The page also
+                    displays best on Chrome.
                   </li>
                   <li>
                     The ideas herein contain many assumptions, and there are
                     plenty of real world reasons why they may not work - such as
                     the KYC restrictions - lack of sufficient liquidity - etc.
-                    In addition, a lot of these concepts were derived before the
-                    Avalaunch partnerships with Dexalot and Rocket Joe were
+                    In addition, a lot of these concepts were arrived at before
+                    the Avalaunch partnerships with Dexalot and Rocket Joe were
                     announced, so they may possess redundant thinking. I'm not
                     married to any ideas here but present simply to foster
                     discussion.
@@ -51,8 +52,8 @@ const Preamble = props => {
                     provides additional utility, incentives or liquidity to
                     tokens vested on the Avalaunch platform, which are claimed
                     through our UI". This presentation is derived in that spirit
-                    - a combination of an analytical white paper and a working
-                    mockup that seeks to address those particular ideas.
+                    - a combination of an analytical white paper and a software
+                    demo that seeks to address those particular ideas.
                   </li>
                 </ul>
               </span>
@@ -117,8 +118,13 @@ const Preamble = props => {
                   </a>
                 </p>
                 <p>
-                  <a id='intro' href='#prototype'>
-                    5. Prototype
+                  <a id='intro' href='#demo'>
+                    5. Demo
+                  </a>
+                </p>
+                <p>
+                  <a id='intro' href='#demo'>
+                    6. Appendix
                   </a>
                 </p>
               </div>
@@ -126,8 +132,8 @@ const Preamble = props => {
             <h1 className='mt-10 mb-3 font-bold text-2xl'>0. Introduction</h1>
             <div className='explainer w-full flex flex-col'>
               <p>
-                The Avalaunch platform has been one of the preeminent and most
-                successful early DApps on the Avalanche network.
+                The Avalaunch platform <isindex /> one of the preeminent and
+                most successful early DApps on the Avalanche network.
               </p>
               <p>
                 In a space where many prices are derived from highly ambiguous
@@ -141,8 +147,7 @@ const Preamble = props => {
                 community members and participating projects.
               </p>
               <p id='future-value'>
-                This paper / prototype is an attempt to propose one such
-                development.
+                This paper / demo is an attempt to propose one such development.
               </p>
             </div>
             <h1 className='mt-14 mb-3 font-bold text-2xl'>1. Future Value</h1>
@@ -199,13 +204,13 @@ const Preamble = props => {
                   * It should be noted the Avalaunch team has already introduced
                   one change to alleviate this particular complaint -
                   aggregating vesting withdrawals into a single transaction.
-                  Great job!
+                  Thanks for this!
                 </p>
               </div>
               <p>
                 A solution to these 2 points could be to{' '}
                 <i>
-                  provide early access to the future value of an IDO allocation
+                  provide early access to the future value of an allocation
                   through the use of secondary liquidity markets
                 </i>
                 . In this case, the project's vesting schedule would still
@@ -249,8 +254,8 @@ const Preamble = props => {
             <h1 className='mt-14 mb-3 font-bold text-2xl'>2. Liquidity</h1>
             <div className='explainer w-full flex flex-col'>
               <p>
-                In order to stand up a secondary market for vesting tokens in a
-                vesting period, there is a need for liquidity providers.
+                In order to stand up a secondary market for vesting tokens,
+                there is a need for liquidity providers.
               </p>
               <p>
                 Options for liquidity provision are varied in DeFi, probably the
@@ -357,9 +362,12 @@ const Preamble = props => {
                 bread-and-butter, two-sided liquidity pooling. This decision
                 primarily came down to the "If I stake, I get rewards" DeFi
                 orthodoxy of LPs. There is a rationale to this that will be
-                revisited in the "4.2. Users" section. In addition, standing up
-                liquidity pools is a well understood and fundamental building
-                block in DeFi.
+                revisited in the{' '}
+                <a href='#stakers' style={{ color: 'rgb(255, 5, 70)' }}>
+                  4.2. Users
+                </a>{' '}
+                section. In addition, standing up liquidity pools is a well
+                understood and fundamental building block in DeFi.
               </p>
               <p>
                 Conceptually, these pools would be separated into tranches by
@@ -523,8 +531,12 @@ const Preamble = props => {
                       that in this scenario, supply-side demand for vesting
                       liquidity would be correlated to price performance, due to
                       the desirability of improving the final allocation portion
-                      (very likely at a discount to the trading price - see
-                      "4.3. Projects")
+                      (very likely at a discount to the trading price - see the
+                      futures curves in{' '}
+                      <a href='#projects' style={{ color: 'rgb(255, 5, 70)' }}>
+                        4.3. Projects
+                      </a>
+                      )
                     </p>
                   </div>
                 </li>
@@ -743,53 +755,17 @@ const Preamble = props => {
               </p>
               <p>
                 Programatically speaking, the functions required by the smart
-                contract serving the pools would be largely covered by an
-                existing pool contract (eg. <i>Masterchef</i>). In particular
-                these functions would allow for:
+                contract serving the pools would be largely covered by existing
+                LP contracts, such as in <i>pangolin-core</i> or <i>joe-core</i>
+                . (And it might even just be worth collaborating with either of
+                those projects to provide LP support.)
               </p>
-              <ol>
-                <li>
-                  <div className='flex'>
-                    <b className='ml-3'>1.</b>
-                    <p className='ml-2 mb-2'>
-                      <i>Exchange creation</i>
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <div className='flex'>
-                    <b className='ml-3'>2.</b>
-                    <p className='ml-2 mb-2'>
-                      <i>Setting up the pool pair</i>
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <div className='flex'>
-                    <b className='ml-3'>3.</b>
-                    <p className='ml-2 mb-2'>
-                      <i>Adding liquidity to the pool</i>
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <div className='flex'>
-                    <b className='ml-3'>4.</b>
-                    <p className='ml-2 mb-2'>
-                      <i>Facilitating swaps</i>
-                    </p>
-                  </div>
-                </li>
-                <li>
-                  <div className='flex'>
-                    <b className='ml-3'>5.</b>
-                    <p className='ml-2'>
-                      <i>Paying out yield</i>
-                    </p>
-                  </div>
-                </li>
-              </ol>
-              <p>Additionally, NFT booster...</p>
+              <p>
+                The only additional feature that is not present in these
+                contracts are the ability to apply NFT boosting awards (via
+                community incentives) to the LP yield. However there are already
+                examples of this in the wild which can be replicated.
+              </p>
               <p>
                 The pool's APR, or interest charged to liquidating participants,
                 could either be fixed, or possibly derived from an inverse
@@ -811,7 +787,7 @@ const Preamble = props => {
                 This value would act as a proxy for how well the pool is
                 satisfying supply-side (rewards) and demand-side (trading)
                 requirements. But an easy rule-of-thumb that is consistent with
-                the main staking pool would be 15%.
+                the main staking pool could be 15%.
               </p>
               <p>
                 The pool's APY would be the current liquidated amount from the
@@ -871,10 +847,10 @@ const Preamble = props => {
             <h2 className='mb-3 mt-3 font-bold text-xl'>4.1. "Total Tokens"</h2>
             <p id='stakers' className='mb-6'>
               The primary concept that would emerge from this design, and that
-              is introduced in the mockup, is that of "Total Tokens". Total
-              Tokens is representative of the current total of tokens that will
-              be apportioned to a user following the whole vesting schedule for
-              the IDO. Currently, that value is fixed as an initial allocation
+              is introduced in the demo, is that of "Total Tokens". Total Tokens
+              is representative of the current total of tokens that will be
+              apportioned to a user following the whole vesting schedule for the
+              IDO. Currently, that value is fixed as an initial allocation
               amount. However under these early access conditions, Total Tokens
               does not have to remain a fixed value, but rather could increase
               and decrease according to staker interaction with the vesting
@@ -883,7 +859,6 @@ const Preamble = props => {
             </p>
             <h2 className='mb-3 mt-3 font-bold text-xl'>4.2. Users</h2>
             <ul
-              id='projects'
               className='text-base notes px-8 mb-6'
               style={{ listStyleType: 'square' }}
             >
@@ -903,10 +878,10 @@ const Preamble = props => {
                 pairing does in fact absorb price movements as an average
                 between the pair tokens, which can act as a hedge. As a result,
                 participating in vesting pools may be a mechanism with which
-                sales participants can hedge the timing risk of the (sometimes
-                lengthy) IDO vesting schedule
+                sales participants can hedge the "time at risk" of the
+                (sometimes lengthy) IDO vesting schedule
               </li>
-              <li>
+              <li id='projects'>
                 Stakers have the ability to cash out their allocations early, if
                 they are so inclined
               </li>
@@ -922,14 +897,12 @@ const Preamble = props => {
             </ul>
             <h2 className='mb-3 mt-3 font-bold text-xl'>4.3. Projects</h2>
             <ul
-              id='avalaunch'
               className='text-base notes px-8 mb-6'
               style={{ listStyleType: 'square' }}
             >
               <li>
                 Participating projects would now have a direct and ongoing means
-                of engagement with their IDO participants, via Avalaunch (and
-                possibly externally, for example through an embeddable widget)
+                of engagement with their IDO participants, via Avalaunch
               </li>
               <li>
                 This engagement feed could involve a series of community rewards
@@ -947,8 +920,8 @@ const Preamble = props => {
                 Price discovery is greatly improved for projects. Instead of a
                 single market price which is often subject to external market
                 conditions and contagion, projects would now be able to see
-                forward prices, in much the same way as Futures markets, which
-                can provide significant market intelligence. A couple of
+                forward prices, in much the same way as futures contracts do,
+                which can provide significant market intelligence. A couple of
                 examples of this are demonstrated here:
               </li>
             </ul>
@@ -1003,14 +976,14 @@ const Preamble = props => {
                 strategic decision-making.
               </p>
             </span>
-            <span>
+            <span id='avalaunch'>
               <Plot2 />
             </span>
             <h2 className='mb-3 mt-3 font-bold text-xl'>
               4.4. Benefits to the Avalaunch platform itself
             </h2>
             <ul
-              id='prototype'
+              id='demo'
               className='text-base notes px-8 mb-6'
               style={{ listStyleType: 'square' }}
             >
@@ -1032,18 +1005,28 @@ const Preamble = props => {
                 this does not yet exist for any Launchpad platform in the space
               </li>
             </ul>
-            <h1 className='mt-14 mb-3 font-bold text-2xl'>5. Prototype</h1>
+            <h1 className='mt-14 mb-3 font-bold text-2xl'>5. Demo</h1>
             <div className='explainer w-full flex flex-col'>
               <p>
-                The following mockup is a Card that could be used to visually
+                The following demo is a Card that could be used to visually
                 present these concepts to Avalaunch users. It is a replication
                 of existing Avalaunch dashboard components with additional
-                sections tacked on.
+                sections tacked on. Unfortunately I ran out of time before I was
+                adequately able to hook this form up to smart contracts on the
+                testnet.
               </p>
               <p>
                 The tooltips in the Card are functional and tie together many of
                 the concepts mentioned here. They are not really worded for end
-                users, but for whoever is viewing this presentation.
+                users, but for whoever is viewing this presentation. In addition
+                the "Open ... Pool" buttons work, to give an idea of user
+                interactivity.
+              </p>
+              <p>
+                Note there is one visual mistake with this design - I have
+                included the initial HeC TGE (Jan-19) as a vesting pool. In
+                reality it is only vestments are the TGE amount that would have
+                their own pools.
               </p>
             </div>
           </div>

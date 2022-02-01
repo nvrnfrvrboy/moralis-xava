@@ -3,6 +3,7 @@ import { useMoralis } from 'react-moralis'
 import Header from './components/Header'
 import Preamble from './components/Preamble'
 import Mockup from './components/Mockup'
+import Appendix from './components/Appendix'
 
 function App () {
   const { authenticate, isAuthenticated, user } = useMoralis()
@@ -26,8 +27,7 @@ function App () {
       <Header />
       <Preamble />
       <Mockup />
-      {/* <Conclusion /> */}
-      {/* <Body /> */}
+      <Appendix />
     </div>
   )
 }
